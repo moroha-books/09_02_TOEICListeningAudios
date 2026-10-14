@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4-5 意図問題</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="ch-head wrap">
+  <a class="back" href="../index.html">目次に戻る</a>
+  <p class="ch-part">Part 4 説明文問題</p>
+  <h1><span class="ch-num">4-5</span>意図問題</h1>
+  <p class="tip">話し手が「なぜ今その一言を言ったか」を考える。</p>
+</header>
+<main class="wrap"><ol class="tracks"><li><button class="track" data-index="0" type="button"><span class="t-label">No. 58–60</span><span class="t-id">P4-21</span></button></li><li><button class="track" data-index="1" type="button"><span class="t-label">No. 61–63</span><span class="t-id">P4-22</span></button></li><li><button class="track" data-index="2" type="button"><span class="t-label">No. 64–66</span><span class="t-id">P4-23</span></button></li><li><button class="track" data-index="3" type="button"><span class="t-label">No. 67–69</span><span class="t-id">P4-24</span></button></li><li><button class="track" data-index="4" type="button"><span class="t-label">No. 70–72</span><span class="t-id">P4-25</span></button></li></ol></main>
+<div class="player" aria-label="音声プレイヤー">
+  <div class="now"><span id="now-label">トラックを選んでください</span><span id="time">0:00 / 0:00</span></div>
+  <input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="再生位置">
+  <div class="controls">
+    <button id="prev" type="button" aria-label="前のトラック">&#9198;</button>
+    <button id="back5" type="button" aria-label="5秒戻る">-5秒</button>
+    <button id="play" class="play" type="button" aria-label="再生">&#9654;</button>
+    <button id="fwd5" type="button" aria-label="5秒進む">+5秒</button>
+    <button id="next" type="button" aria-label="次のトラック">&#9197;</button>
+  </div>
+  <div class="options">
+    <label class="opt">速さ
+      <select id="speed">
+        <option value="0.8">0.8</option><option value="0.9">0.9</option>
+        <option value="1" selected>1.0</option><option value="1.1">1.1</option>
+        <option value="1.25">1.25</option>
+      </select>
+    </label>
+    <label class="opt"><input type="checkbox" id="slow"> ゆっくり</label>
+    <label class="opt"><input type="checkbox" id="auto" checked> 連続再生</label>
+    <label class="opt"><input type="checkbox" id="repeat"> くり返し</label>
+  </div>
+  <audio id="audio" preload="none"></audio>
+</div>
+<script>window.TRACKS = [{"label": "No. 58–60", "id": "P4-21", "normal": "../audio/part4/P4-21.mp3", "slow": "../audio_slow/part4/P4-21.mp3"}, {"label": "No. 61–63", "id": "P4-22", "normal": "../audio/part4/P4-22.mp3", "slow": "../audio_slow/part4/P4-22.mp3"}, {"label": "No. 64–66", "id": "P4-23", "normal": "../audio/part4/P4-23.mp3", "slow": "../audio_slow/part4/P4-23.mp3"}, {"label": "No. 67–69", "id": "P4-24", "normal": "../audio/part4/P4-24.mp3", "slow": "../audio_slow/part4/P4-24.mp3"}, {"label": "No. 70–72", "id": "P4-25", "normal": "../audio/part4/P4-25.mp3", "slow": "../audio_slow/part4/P4-25.mp3"}];</script>
+<script src="../assets/player.js"></script>
+</body>
+</html>
