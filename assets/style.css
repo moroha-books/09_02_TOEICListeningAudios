@@ -103,3 +103,27 @@ body {
 button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible {
   outline: 3px solid var(--accent); outline-offset: 2px;
 }
+
+/* 特典(通勤リスニング) */
+.bonus { display: block; margin: 18px 0 0; padding: 14px 16px; border: 2px solid var(--accent);
+  border-radius: 10px; color: inherit; text-decoration: none; font-weight: 700; }
+.bonus-tag { display: inline-block; margin-right: 8px; padding: 0 8px; border-radius: 4px;
+  background: var(--marker); color: var(--marker-ink); font-size: 0.85rem; }
+.bonus-sub { display: block; margin-top: 4px; color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+.howto { margin: 10px 0 0; padding-left: 1.2em; color: var(--muted); font-size: 0.92rem; }
+.chapter-card { width: 100%; display: grid; grid-template-columns: 3.2em 1fr auto; gap: 4px 8px;
+  align-items: baseline; padding: 12px 4px; border: 0; border-bottom: 1px solid var(--rule);
+  background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.chapter-card .progress { grid-column: 2 / 4; color: var(--muted); font-size: 0.82rem; }
+.chapter-card.playing .ch-title {
+  background: linear-gradient(transparent 45%, var(--marker) 45%, var(--marker) 90%, transparent 90%);
+  color: var(--marker-ink); }
+.sets { list-style: none; margin: 0; padding: 0; }
+.set-item { width: 100%; display: block; padding: 10px 4px; border: 0; border-bottom: 1px solid var(--rule);
+  background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.set-label { display: block; font-weight: 700; }
+.set-sum { display: block; color: var(--muted); font-size: 0.9rem; }
+.set-item.playing .set-label {
+  background: linear-gradient(transparent 45%, var(--marker) 45%, var(--marker) 90%, transparent 90%);
+  color: var(--marker-ink); display: inline; }
+#now-set { color: var(--muted); font-weight: 400; margin-left: 6px; }
