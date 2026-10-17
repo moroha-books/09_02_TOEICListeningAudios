@@ -31,16 +31,31 @@
     return slow && slow.checked && t.slow ? t.slow : t.normal;
   }
 
-  function select(i) {
+  function select(i, autoplay) {
     if (i < 0 || i >= tracks.length) return;
     current = i;
     audio.src = srcFor(tracks[i]);
     audio.playbackRate = parseFloat(speed.value);
-    audio.play();
+    if (autoplay !== false) audio.play();
     labelEl.textContent = tracks[i].label;
     buttons.forEach(function (b, j) { b.classList.toggle("playing", j === i); });
     buttons[i].scrollIntoView({ block: "nearest" });
   }
+
+  // 本の「▶ 音声」リンク(例:ch/2-1.html#P2-001)から開いたとき、その問題を選んでおく。
+  // スマホのブラウザは自動再生を許さないので、再生は ▶ ボタンを押してから。
+  function selectFromHash() {
+    var id = decodeURIComponent((location.hash || "").slice(1));
+    if (!id) return;
+    for (var i = 0; i < tracks.length; i++) {
+      if (tracks[i].id === id) {
+        select(i, false);
+        labelEl.textContent = tracks[i].label + "(▶ を押すと再生)";
+        return;
+      }
+    }
+  }
+  window.addEventListener("hashchange", selectFromHash);
 
   buttons.forEach(function (b) {
     b.addEventListener("click", function () { select(parseInt(b.dataset.index, 10)); });
@@ -91,4 +106,5 @@
     if (audio.duration) audio.currentTime = (seek.value / 100) * audio.duration;
     seeking = false;
   });
+  selectFromHash();
 })();
